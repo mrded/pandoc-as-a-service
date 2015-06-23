@@ -1,6 +1,6 @@
 var assert = require('assert'),
     request = require("request");
- 
+
 var server = require('../lib/server');
 var port = process.argv[3] || 8080;
 
@@ -9,20 +9,20 @@ describe('server', function() {
     server.listen(port);
   });
 
-  after(function () {
+  after(function() {
     server.close();
   });
 
-  describe('/convert', function () {
+  describe('/convert', function() {
     it('should convert markdown to mediawiki', function(done) {
       var params = {
-        uri: 'http://localhost:' + port + '/convert',
+        uri: "http://localhost:" + port + "/convert",
         method: "POST",
-        from: 'markdown',
-        to: 'html',
-        text: '# Heading'
+        from: "markdown",
+        to: "mediawiki",
+        text: "# Heading"
       };
-      
+
       request(params, function(error, response, body) {
         assert.equal('= Heading =', body.trim());
         done();
