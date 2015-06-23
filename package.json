@@ -19,5 +19,11 @@
     "url": "https://github.com/mrded/pandoc-as-a-service/issues"
   },
   "homepage": "https://github.com/mrded/pandoc-as-a-service#readme",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "pdc": "^0.2.2"
+  },
+  "scripts": {
+    "start": "node index.js $PORT"
+  }
 }
