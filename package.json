@@ -23,7 +23,12 @@
   "dependencies": {
     "pdc": "^0.2.2"
   },
+  "devDependencies": {
+    "mocha": "^2.2.5",
+    "request": "^2.58.0"
+  },
   "scripts": {
-    "start": "node index.js $PORT"
+    "start": "node index.js $PORT",
+    "test": "mocha tests $PORT"
   }
 }
