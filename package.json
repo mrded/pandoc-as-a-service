@@ -1,0 +1,23 @@
+{
+  "name": "pandoc-as-a-service",
+  "version": "1.0.0",
+  "description": "If you need to convert text from one markup format into another, pandoc is your swiss-army knife. ",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrded/pandoc-as-a-service.git"
+  },
+  "keywords": [
+    "pandoc",
+    "text",
+    "markup",
+    "format",
+    "convert"
+  ],
+  "author": "Dmitry Demenchuk <dmitry@demenchuk.me>",
+  "bugs": {
+    "url": "https://github.com/mrded/pandoc-as-a-service/issues"
+  },
+  "homepage": "https://github.com/mrded/pandoc-as-a-service#readme",
+  "license": "MIT"
+}
