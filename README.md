@@ -1,6 +1,10 @@
 # Pandoc As A Service
 If you need to convert text from one markup format into another, pandoc is your swiss-army knife.
 
+## Overview
+
+I basicaly wrapped [Pandoc](http://pandoc.org/) in a web service.
+
 ## Installation
 
 1. Install [Pandoc](http://pandoc.org/installing.html).
