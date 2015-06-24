@@ -13,10 +13,12 @@ Basicaly I wrapped [Pandoc](http://pandoc.org/) in a web service.
 
 The server will be avaliable on `http://localhost:8080`
 
-## Usage
+## Conversion API
 
-Sent a text as HTTP POST request to http://localhost:8080/:from/:to
+**Pandoc As A Service** has a simple to use HTTP API:
+
+Sent a text as HTTP POST request to http://pandoc-as-a-service.com/:from/:to
 
 ~~~ bash
-curl -H "Content-Type: text/plain" -X POST -d "# hello" http://localhost:8080/markdown/html
+curl -H "Content-Type: text/plain" -X POST -d "# hello" http://pandoc-as-a-service.com/markdown/html
 ~~~

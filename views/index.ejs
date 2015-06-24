@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Pandoc As A Service</title>
+
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+<a href="https://github.com/mrded/pandoc-as-a-service"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"></a>
+
+    <div class="container">
+      <div class="header clearfix">
+        <h3 class="text-muted">Pandoc As A Service</h3>
+      </div>
+
+      <div class="jumbotron">
+        <p class="lead">If you need to convert text from one markup format into another, <strong>Pandoc As A Service</strong> is your swiss-army knife.</p>
+      </div>
+
+      <div class="row marketing">
+        <div class="col-lg-6">
+          <h4>Conversion API</h4>
+          <p><strong>Pandoc As A Service</strong> has a simple to use HTTP API:</p>
+          <pre>curl -H "Content-Type: text/plain" -X POST -d "# hello" http://pandoc-as-a-service.com/markdown/html</pre>
+        </div>
+
+        <div class="col-lg-3">
+          <h5>Input formats:</h5>
+          <ul>
+            <li>commonmark</li>
+            <li>docbook</li>
+            <li>docx</li>
+            <li>epub</li>
+            <li>haddock</li>
+            <li>html</li>
+            <li>latex</li>
+            <li>markdown</li>
+            <li>markdown_github</li>
+            <li>markdown_mmd</li>
+            <li>markdown_phpextra</li>
+            <li>markdown_strict</li>
+            <li>mediawiki</li>
+            <li>native</li>
+            <li>opml</li>
+            <li>org</li>
+            <li>rst</li>
+            <li>t2t</li>
+            <li>textile</li>
+            <li>twiki</li>
+          </ul>
+        </div>
+        <div class="col-lg-3">
+          <h5>Output formats:</h5>
+          <ul>
+            <li>asciidoc</li>
+            <li>beamer</li>
+            <li>commonmark</li>
+            <li>context</li>
+            <li>docbook</li>
+            <li>docx</li>
+            <li>dokuwiki</li>
+            <li>dzslides</li>
+            <li>epub</li>
+            <li>epub3</li>
+            <li>fb2</li>
+            <li>haddock</li>
+            <li>html</li>
+            <li>html5</li>
+            <li>icml</li>
+            <li>latex</li>
+            <li>man</li>
+            <li>markdown</li>
+            <li>markdown_github</li>
+            <li>markdown_mmd</li>
+            <li>markdown_phpextra</li>
+            <li>markdown_strict</li>
+            <li>mediawiki</li>
+            <li>native</li>
+            <li>odt</li>
+            <li>opendocument</li>
+            <li>opml</li>
+            <li>org</li>
+            <li>plain</li>
+            <li>revealjs</li>
+            <li>rst</li>
+            <li>rtf</li>
+            <li>s5</li>
+            <li>slideous</li>
+            <li>slidy</li>
+            <li>texinfo</li>
+            <li>textile</li>
+          </ul>
+        </div>
+      </div>
+
+      <hr/>
+      <footer class="footer">
+        <a class="pull-right" href="http://demenchuk.me">© Dmitry Demenchuk</a>
+      </footer>
+
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Latest compiled and minified Bootstrap JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  </body>
+</html>
