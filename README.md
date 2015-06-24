@@ -11,12 +11,12 @@ Basicaly I wrapped [Pandoc](http://pandoc.org/) in a web service.
 2. Install dependencies: `npm i`
 3. Run it: `npm start`
 
-The server will be avaliable on `http://localhost:8080/convert`
+The server will be avaliable on `http://localhost:8080`
 
 ## Usage
 
-Sent a post request to http://localhost:8080
+Sent a text as HTTP POST request to http://localhost:8080/:from/:to
 
 ~~~ bash
-curl -H "Content-Type: application/json" -X POST -d '{"from": "markdown", "to": "html", "text": "# hello"}' http://localhost:8080
+curl -H "Content-Type: text/plain" -X POST -d "# hello" http://localhost:8080/markdown/html
 ~~~

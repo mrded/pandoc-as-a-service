@@ -9,16 +9,13 @@ describe('server', function() {
     server.listen(port);
   });
 
-  describe('/', function() {
+  describe('/:from/:to', function() {
     it('should convert markdown to mediawiki', function(done) {
       var params = {
-        uri: "http://localhost:" + port,
+        uri: "http://localhost:" + port + "/markdown/mediawiki",
         method: "POST",
-        json: {
-          from: "markdown",
-          to: "mediawiki",
-          text: "# Heading"
-        }
+        headers: {"Content-Type": "text/plain"},
+        body: "# Heading"
       };
 
       request(params, function(error, response, body) {
