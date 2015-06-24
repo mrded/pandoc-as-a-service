@@ -1,7 +1,7 @@
 {
   "name": "pandoc-as-a-service",
   "version": "1.0.0",
-  "description": "If you need to convert text from one markup format into another, pandoc is your swiss-army knife. ",
+  "description": "If you need to convert text from one markup format into another, pandoc-as-a-service is your swiss-army knife. ",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -18,8 +18,8 @@
   "bugs": {
     "url": "https://github.com/mrded/pandoc-as-a-service/issues"
   },
-  "homepage": "https://github.com/mrded/pandoc-as-a-service#readme",
-  "license": "MIT",
+  "homepage": "http://pandoc-as-a-service.com",
+  "license": "BSD-2-Clause",
   "dependencies": {
     "body-parser": "^1.13.1",
     "ejs": "^2.3.1",
