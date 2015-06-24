@@ -31,6 +31,6 @@
   },
   "scripts": {
     "start": "node index.js $PORT",
-    "test": "mocha tests $PORT"
+    "test": "mocha tests"
   }
 }
