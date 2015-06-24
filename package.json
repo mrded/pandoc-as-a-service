@@ -21,6 +21,8 @@
   "homepage": "https://github.com/mrded/pandoc-as-a-service#readme",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.13.1",
+    "express": "^4.13.0",
     "pdc": "^0.2.2"
   },
   "devDependencies": {

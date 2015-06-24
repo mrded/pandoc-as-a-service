@@ -15,8 +15,8 @@ The server will be avaliable on `http://localhost:8080/convert`
 
 ## Usage
 
-Sent a post request to http://localhost:8080/convert
+Sent a post request to http://localhost:8080
 
 ~~~ bash
-echo '{from: "markdown", to: "html", text: "# hello"}' | curl -d @- http://localhost:8080/convert 
+curl -H "Content-Type: application/json" -X POST -d '{"from": "markdown", "to": "html", "text": "# hello"}' http://localhost:8080
 ~~~
