@@ -1,12 +1,8 @@
 var express = require('express'),
-    bodyParser = require('body-parser')
+    helpers = require('./helpers'),
     pdc = require('pdc');
 
 this.server = express();
-
-// To support text-encoded bodies. {limit: '100kb'}
-this.server.use(bodyParser.text());
-
 this.server.set('views', './views');
 this.server.set('view engine', 'ejs');
 
@@ -14,15 +10,15 @@ this.server.get('/', function(req, res) {
   res.render('index');
 });
 
-this.server.post('/:from/:to', function(req, res) {
-  if (!req.params.from || !req.params.to) return res.sendStatus(400);
+this.server.post('/:format', function(req, res) {
+  var to = req.params.format;
+  var from = req.get('Content-Type').split("/")[1];
 
-  pdc(req.body, req.params.from, req.params.to, function(err, result) {
-    if (err) {
-      res.sendStatus(500);
-      res.send(err.message);
-    }
-    else res.send(result); // 200
+  helpers.getBody(req, function(body) {
+    pdc(body, from, to, function(err, result) {
+      if (err) res.sendStatus(400)
+        else res.append('Content-Type', 'text/' + to).send(result);
+    });
   });
 });
 
