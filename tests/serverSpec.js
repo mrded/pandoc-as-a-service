@@ -1,25 +1,31 @@
 var assert = require('assert'),
     request = require("request");
 
-var server = require('../server');
-var port = process.argv[3] || 8080;
-
 describe('server', function() {
+  var server = require('../server');
+  var port = process.argv[3] || 8080;
+
   before(function() {
     server.listen(port);
   });
 
+  var convert = function(from, to, text, callback) {
+    var params = {
+      uri: "http://localhost:" + [port, from, to].join('/'),
+      method: "POST",
+      headers: {"Content-Type": "text/plain"},
+      body: text
+    };
+
+    request(params, function(error, response, body) {
+      callback(body.trim());
+    });
+  };
+
   describe('/:from/:to', function() {
     it('should convert markdown to mediawiki', function(done) {
-      var params = {
-        uri: "http://localhost:" + port + "/markdown/mediawiki",
-        method: "POST",
-        headers: {"Content-Type": "text/plain"},
-        body: "# Heading"
-      };
-
-      request(params, function(error, response, body) {
-        assert.equal('= Heading =', body.trim());
+      convert('markdown', 'mediawiki', '# Heading', function(body) {
+        assert.equal('= Heading =', body);
         done();
       });
     });
