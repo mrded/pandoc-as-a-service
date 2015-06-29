@@ -43,8 +43,8 @@
         <div class="col-lg-6">
           <h4>Conversion API</h4>
           <p><strong>pandoc-as-a-service</strong> has a simple to use HTTP API.</p>
-          <p>POST a text to http://pandoc-as-a-service.com/:from/:to</p>
-          <pre>curl -H "Content-Type: text/plain" -X POST -d "# hello" http://pandoc-as-a-service.com/markdown/html</pre>
+          <p>POST a text to http://pandoc-as-a-service.com/:format</p>
+          <pre>curl -H "Content-Type: text/markdown" -X POST -d "# hello" http://pandoc-as-a-service.com/html</pre>
         </div>
 
         <div class="col-lg-3">
