@@ -32,7 +32,7 @@
   <body ng-app="myApp">
     <a href="https://github.com/mrded/pandoc-as-a-service"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"></a>
 
-    <div class="container">
+    <div class="container" ng-controller="AppCtrl">
       <div class="header clearfix">
         <h3 class="text-muted">Pandoc As A Service</h3>
       </div>
@@ -42,117 +42,46 @@
         <p><kbd>pandoc-as-a-service</kbd> allows you to do it online via friendly HTTP API.</p>
       </div>
 
-      <div class="row" ng-controller="AppCtrl">
+      <div class="row">
         <div class="col-lg-6">
           <div class="form-group">
-            <textarea class="form-control" rows="10" ng-model="input"></textarea>
+            <textarea class="form-control" rows="18" ng-model="input"></textarea>
           </div>
         </div>
         
         <div class="col-lg-6">
-          <div class="form-inline">
-            <div class="form-group">
-              <label for="inputFormat">Input format</label>
-              <select class="form-control" id="inputFormat" ng-model="inputFormat">
-                <option ng-repeat="format in inputFormats">{{format}}</option>
-              </select>
-            </div>
+          <h4>Conversion API</h4>
+          <p><strong>pandoc-as-a-service</strong> has a simple to use HTTP API.</p>
+          <p>POST a data to http://pandoc-as-a-service.com/:format</p>
+          <pre>curl -H "Content-Type: text/{{inputFormat}}" -X POST -d "%DATA%" http://pandoc-as-a-service.com/{{outputFormat}}</pre>
           
-            <div class="form-group">
-              <div class="dropdown">
-                <button class="btn btn-default dropdown-toggle" type="button" id="outputFormat" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                  Convert
-                  <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="outputFormat">
-                  <li><a href="#" ng-repeat="outputFormat in outputFormats" ng-click="convert(inputFormat, outputFormat, input)">{{outputFormat}}</a></li>
-                </ul>
-              </div>
-            </div>
+          <hr/>
+          
+          <div class="form-group">
+            <label for="inputFormat">Input format</label>
+            <select class="form-control" id="inputFormat" ng-model="inputFormat">
+              <option ng-repeat="inputFormat in inputFormats">{{inputFormat}}</option>
+            </select>
           </div>
-          
-          <code ng-if="output">{{output}}</code> 
+        
+          <div class="form-group">
+            <label for="outputFormat">Output format</label>
+            <select class="form-control" id="outputFormat" ng-model="outputFormat">
+              <option ng-repeat="outputFormat in outputFormats">{{outputFormat}}</option>
+            </select>
+           </div>
+           
+           <div class="form-group">
+             <button class="btn btn-default btn-block" ng-click="convert(inputFormat, outputFormat, input)">
+                Convert
+             </button>
+          </div>
         </div>
       </div>
       
       <hr>
       
-      <div class="row">
-        <div class="col-lg-6">
-          <h4>Conversion API</h4>
-          <p><strong>pandoc-as-a-service</strong> has a simple to use HTTP API.</p>
-          <p>POST a text to http://pandoc-as-a-service.com/:format</p>
-          <pre>curl -H "Content-Type: text/markdown" -X POST -d "# hello" http://pandoc-as-a-service.com/html</pre>
-        </div>
-
-        <div class="col-lg-3">
-          <h5>Input formats:</h5>
-          <ul>
-            <li>commonmark</li>
-            <li>docbook</li>
-            <li><del>docx</del></li>
-            <li><del>epub</del></li>
-            <li>haddock</li>
-            <li>html</li>
-            <li>latex</li>
-            <li>markdown</li>
-            <li>markdown_github</li>
-            <li>markdown_mmd</li>
-            <li>markdown_phpextra</li>
-            <li>markdown_strict</li>
-            <li>mediawiki</li>
-            <li><del>native</del></li>
-            <li>opml</li>
-            <li>org</li>
-            <li>rst</li>
-            <li>t2t</li>
-            <li>textile</li>
-            <li>twiki</li>
-          </ul>
-        </div>
-        <div class="col-lg-3">
-          <h5>Output formats:</h5>
-          <ul>
-            <li>asciidoc</li>
-            <li>beamer</li>
-            <li>commonmark</li>
-            <li>context</li>
-            <li>docbook</li>
-            <li><del>docx</del></li>
-            <li>dokuwiki</li>
-            <li>dzslides</li>
-            <li><del>epub</del></li>
-            <li><del>epub3</del></li>
-            <li>fb2</li>
-            <li>haddock</li>
-            <li>html</li>
-            <li>html5</li>
-            <li>icml</li>
-            <li>latex</li>
-            <li>man</li>
-            <li>markdown</li>
-            <li>markdown_github</li>
-            <li>markdown_mmd</li>
-            <li>markdown_phpextra</li>
-            <li>markdown_strict</li>
-            <li>mediawiki</li>
-            <li>native</li>
-            <li><del>odt</del></li>
-            <li>opendocument</li>
-            <li>opml</li>
-            <li>org</li>
-            <li>plain</li>
-            <li>revealjs</li>
-            <li>rst</li>
-            <li>rtf</li>
-            <li>s5</li>
-            <li>slideous</li>
-            <li>slidy</li>
-            <li>texinfo</li>
-            <li>textile</li>
-          </ul>
-        </div>
-      </div>
+      <code ng-if="output">{{output}}</code> 
 
       <hr/>
       <footer class="footer">
