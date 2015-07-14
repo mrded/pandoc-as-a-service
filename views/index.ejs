@@ -9,7 +9,10 @@
 
     <!-- Latest compiled and minified Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+    <script src="/js/app.js"></script>
+    
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -26,8 +29,8 @@
       ga('send', 'pageview');
     </script>
   </head>
-  <body>
-<a href="https://github.com/mrded/pandoc-as-a-service"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"></a>
+  <body ng-app="myApp">
+    <a href="https://github.com/mrded/pandoc-as-a-service"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"></a>
 
     <div class="container">
       <div class="header clearfix">
@@ -39,7 +42,42 @@
         <p><kbd>pandoc-as-a-service</kbd> allows you to do it online via friendly HTTP API.</p>
       </div>
 
-      <div class="row marketing">
+      <div class="row" ng-controller="AppCtrl">
+        <div class="col-lg-6">
+          <div class="form-group">
+            <textarea class="form-control" rows="10" ng-model="input"></textarea>
+          </div>
+        </div>
+        
+        <div class="col-lg-6">
+          <div class="form-inline">
+            <div class="form-group">
+              <label for="inputFormat">Input format</label>
+              <select class="form-control" id="inputFormat" ng-model="inputFormat">
+                <option ng-repeat="format in inputFormats">{{format}}</option>
+              </select>
+            </div>
+          
+            <div class="form-group">
+              <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" id="outputFormat" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                  Convert
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="outputFormat">
+                  <li><a href="#" ng-repeat="outputFormat in outputFormats" ng-click="convert(inputFormat, outputFormat, input)">{{outputFormat}}</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <code ng-if="output">{{output}}</code> 
+        </div>
+      </div>
+      
+      <hr>
+      
+      <div class="row">
         <div class="col-lg-6">
           <h4>Conversion API</h4>
           <p><strong>pandoc-as-a-service</strong> has a simple to use HTTP API.</p>
