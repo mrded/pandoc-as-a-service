@@ -17,8 +17,8 @@ The server will be avaliable on `http://localhost:8080`
 
 **Pandoc As A Service** has a simple to use HTTP API:
 
-POST a text to http://pandoc-as-a-service.com/:format
+POST a text to http://localhost/:format
 
 ~~~ bash
-curl -H "Content-Type: text/markdown" -X POST -d "# hello" http://pandoc-as-a-service.com/html
+curl -H "Content-Type: text/markdown" -X POST -d "# hello" http://localhost/html
 ~~~
