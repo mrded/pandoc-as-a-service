@@ -7,7 +7,7 @@ Basicaly I wrapped [Pandoc](http://pandoc.org/) in a web service.
 
 ## Installation
 
-`docker run mrded/pandoc-as-a-service -p 8080:8080`
+`docker run -p 8080:8080 mrded/pandoc-as-a-service`
 
 The server will be avaliable on `http://localhost:8080`
 
