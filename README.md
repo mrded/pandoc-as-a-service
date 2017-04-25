@@ -7,9 +7,7 @@ Basicaly I wrapped [Pandoc](http://pandoc.org/) in a web service.
 
 ## Installation
 
-1. Install [Pandoc](http://pandoc.org/installing.html).
-2. Install dependencies: `npm i`
-3. Run it: `npm start`
+`docker run mrded/pandoc-as-a-service -p 8080:8080`
 
 The server will be avaliable on `http://localhost:8080`
 
