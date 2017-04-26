@@ -10,14 +10,11 @@ COPY . /usr/src/pandoc-as-a-service
 WORKDIR /usr/src/pandoc-as-a-service
 
 # Install packages
-RUN apt-get update --fix-missing
-RUN apt-get install -y pandoc
-
-# Clean up
-RUN apt-get clean && rm -rf /var/lib/apt/lists/*
-
-# Install service
-RUN npm install
+RUN apt-get update --fix-missing \
+  && apt-get install -y pandoc \
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists/* \
+  && npm install
 
 EXPOSE 8080
 
