@@ -3,7 +3,7 @@ If you need to convert text from one markup format into another, pandoc is your 
 
 ## Overview
 
-Basicaly I wrapped [Pandoc](http://pandoc.org/) in a web service.
+Basically I wrapped [Pandoc](http://pandoc.org/) in a web service.
 
 ## Installation
 
