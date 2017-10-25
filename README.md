@@ -9,7 +9,7 @@ Basicaly I wrapped [Pandoc](http://pandoc.org/) in a web service.
 
 `docker run -p 8080:8080 mrded/pandoc-as-a-service`
 
-The server will be avaliable on `http://localhost:8080`
+The server will be available on `http://localhost:8080`
 
 ## Conversion API
 
