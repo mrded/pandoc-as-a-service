@@ -5,7 +5,6 @@ LABEL version="1.0"
 LABEL description="If you need to convert text from one markup format into another, pandoc is your swiss-army knife."
 
 # Create app directory
-RUN mkdir -p /usr/src/pandoc-as-a-service
 COPY . /usr/src/pandoc-as-a-service
 WORKDIR /usr/src/pandoc-as-a-service
 
